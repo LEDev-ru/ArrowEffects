@@ -9,7 +9,7 @@
 
 particles-spawn-delay: 0.5 # In seconds
 
-# EXPLOSION, CRIT, HEART, TOTEM, SMOKE, CLOUD (Default: CLOUD)
+# EXPLOSION_NORMAL, CRIT, HEART, TOTEM, SMOKE_NORMAL, CLOUD (Default: CLOUD)
 particle-type: 'CLOUD'
 
 particles-count: 1
