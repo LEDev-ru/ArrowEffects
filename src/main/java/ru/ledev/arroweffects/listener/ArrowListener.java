@@ -1,12 +1,13 @@
-package ru.ledev.arroweffects;
+package ru.ledev.arroweffects.listener;
 
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
+import ru.ledev.arroweffects.ArrowEffects;
 
-public class AEHandler implements Listener {
+public class ArrowListener implements Listener {
     @EventHandler
     public void onShoot(EntityShootBowEvent e) {
         LivingEntity entity = e.getEntity();

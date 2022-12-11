@@ -5,12 +5,10 @@ import org.bukkit.Particle;
 import org.bukkit.Server;
 import org.bukkit.World;
 import org.bukkit.entity.*;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityShootBowEvent;
-import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
+import ru.ledev.arroweffects.listener.ArrowListener;
 import ru.ledev.utils.StringUtils;
 
 import java.util.ArrayList;
@@ -28,7 +26,7 @@ public final class ArrowEffects extends JavaPlugin implements Listener {
 
         instance = this;
         saveDefaultConfig();
-        getServer().getPluginManager().registerEvents(new AEHandler(), this);
+        getServer().getPluginManager().registerEvents(new ArrowListener(), this);
 
         Server server = getServer();
 
