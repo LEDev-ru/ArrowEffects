@@ -28,7 +28,7 @@ public final class ArrowEffects extends JavaPlugin implements Listener {
 
         instance = this;
         saveDefaultConfig();
-        getServer().getPluginManager().registerEvents(this, this);
+        getServer().getPluginManager().registerEvents(new AEHandler(), this);
 
         Server server = getServer();
 
@@ -94,28 +94,11 @@ public final class ArrowEffects extends JavaPlugin implements Listener {
         getInstance().getLogger().info(StringUtils.formatString(log));
     }
 
-    @EventHandler
-    public void onShoot(EntityShootBowEvent e) {
-        LivingEntity entity = e.getEntity();
-        if (!(entity instanceof Player)) return;
-
-        Player player = (Player) entity;
-        if (!(player.isOp() || player.hasPermission("ae.effects"))) return;
-
-        Entity projectile = e.getProjectile();
-        if (!(projectile instanceof Arrow)) return;
-
-        Arrow arrow = (Arrow) projectile;
+    public void addArrow(Arrow arrow) {
         arrowList.add(arrow);
     }
 
-    @EventHandler
-    public void onArrowEnd(ProjectileHitEvent e) {
-        Projectile projectile = e.getEntity();
-        if (!(projectile instanceof Arrow)) return;
-
-        Arrow arrow = (Arrow) projectile;
-
+    public void removeArrow(Arrow arrow) {
         arrowList.remove(arrow);
     }
 }
