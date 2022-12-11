@@ -1,0 +1,10 @@
+name: ArrowEffects
+version: '${project.version}'
+main: ru.ledev.arroweffects.ArrowEffects
+api-version: 1.16
+author: LEDev
+website: https://ledev.ru
+
+permissions:
+  ae.effects:
+    description: 'Permission for the effects of arrows fired by the player'
